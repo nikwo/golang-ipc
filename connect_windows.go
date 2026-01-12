@@ -18,7 +18,7 @@ func (s *Server) run() error {
 	var config *winio.PipeConfig
 
 	if s.unMask {
-		config = &winio.PipeConfig{SecurityDescriptor: "D:P(A;;GA;;;AU)"}
+		config = &winio.PipeConfig{SecurityDescriptor: "D:(A;OICI;GA;;;S-1-5-32-544)(A;OICI;GA;;;S-1-5-18)(A;OICI;GRGW;;;S-1-5-11)"}
 	} 
 
 	listen, err := winio.ListenPipe(pipeBase+s.name, config)
